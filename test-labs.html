@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Results Note Extension Test</title>
+    <style>
+      body {
+        color: #17202a;
+        font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        margin: 40px;
+        max-width: 760px;
+      }
+
+      .result-block {
+        border: 1px solid #d7dde6;
+        border-radius: 8px;
+        margin-bottom: 24px;
+        padding: 18px;
+        white-space: pre-wrap;
+      }
+
+      .abnormal {
+        color: #b42318;
+        font-weight: 700;
+      }
+
+      .asset-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 0 16px;
+      }
+
+      .asset-links a {
+        border: 1px solid #d7dde6;
+        border-radius: 6px;
+        color: #195653;
+        padding: 8px 10px;
+        text-decoration: none;
+      }
+
+      .preview-image {
+        border: 1px solid #d7dde6;
+        border-radius: 8px;
+        display: block;
+        margin-bottom: 24px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Results Note Extension Test</h1>
+    <p>Highlight fake PMH, medications, labs, or imaging below, then click the extension and choose Use Selection or Add Selection.</p>
+
+    <h2>Fake Lab PDF/Image Files</h2>
+    <div class="asset-links">
+      <a href="test-assets/fake-labs-text.pdf" target="_blank">Open selectable text PDF</a>
+      <a href="test-assets/fake-labs-image-only.pdf" target="_blank">Open image-only PDF</a>
+      <a href="test-assets/fake-labs-scan.png" target="_blank">Open PNG scan</a>
+    </div>
+    <img class="preview-image" src="test-assets/fake-labs-scan.png" alt="Fake scanned lab report preview">
+
+    <h2>Fake Past Medical History</h2>
+    <div class="result-block" contenteditable="true">Past medical history:
+- Type 2 diabetes mellitus
+- Hypertension
+- Hyperlipidemia
+- Chronic kidney disease stage 3a
+- Iron deficiency anemia
+- Nephrolithiasis
+- GERD
+- Osteoarthritis of bilateral knees
+
+Past surgical history:
+- Appendectomy in 2012
+- Total abdominal hysterectomy in 2018</div>
+
+    <h2>Fake Medication List</h2>
+    <div class="result-block" contenteditable="true">Current medications:
+- Metformin ER 1000 mg PO BID
+- Empagliflozin 10 mg PO daily
+- Lisinopril 20 mg PO daily
+- Atorvastatin 40 mg PO nightly
+- Amlodipine 5 mg PO daily
+- Ferrous sulfate 325 mg PO every other day
+- Acetaminophen 500 mg PO q6h PRN pain
+
+Medication allergies:
+- NKDA</div>
+
+    <h2>Fake Lab Results</h2>
+    <div class="result-block" contenteditable="true">CBC: WBC 7.2, <span class="abnormal">Hgb 10.8 low</span>, Platelets 240.
+CMP: <span class="abnormal">Creatinine 1.4 high</span>, <span class="abnormal">eGFR 48 low</span>, Sodium 139, Potassium 4.6.
+<span class="abnormal">A1c 8.2 high</span>.</div>
+
+    <h2>Fake Imaging Report</h2>
+    <div class="result-block" contenteditable="true">CT Abdomen/Pelvis with contrast
+Indication: Left lower quadrant abdominal pain.
+
+Findings:
+Lung bases are clear. Liver, gallbladder, pancreas, spleen, and adrenal glands are unremarkable. <span class="abnormal">Mild left hydronephrosis.</span> <span class="abnormal">4 mm obstructing calculus in the distal left ureter near the UVJ.</span> No bowel obstruction. Appendix is normal. No free air or free fluid.
+
+Impression:
+1. <span class="abnormal">4 mm obstructing distal left ureteral stone with mild left hydronephrosis.</span>
+2. No bowel obstruction or appendicitis.</div>
+  </body>
+</html>

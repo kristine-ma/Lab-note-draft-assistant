@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab Note Draft Assistant</title>
+    <link rel="stylesheet" href="src/popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <h1>Lab Note Draft</h1>
+          <p id="source-status">Ready to extract selected text or page labs.</p>
+        </div>
+        <button id="settings-toggle" class="icon-button" type="button" aria-label="Settings" title="Settings">
+          <span aria-hidden="true">S</span>
+        </button>
+      </header>
+
+      <section id="settings" class="panel hidden" aria-label="Settings">
+        <label>
+          OpenAI API key
+          <input id="api-key" type="password" autocomplete="off" placeholder="sk-...">
+        </label>
+        <label>
+          Model
+          <input id="model" type="text" autocomplete="off" placeholder="gpt-4.1">
+        </label>
+        <label>
+          Optional approved proxy URL
+          <input id="proxy-url" type="url" autocomplete="off" placeholder="https://your-server.example/lab-note">
+        </label>
+        <p class="fine-print">
+          For PHI, use only an approved, compliant environment. A server-side proxy is preferred so API keys are not stored in the browser.
+        </p>
+        <button id="save-settings" type="button">Save Settings</button>
+      </section>
+
+      <section class="toolbar" aria-label="Extraction actions">
+        <button id="extract-selection" type="button">Use Selection</button>
+        <button id="add-selection" type="button">Add Selection</button>
+        <button id="extract-page" type="button">Use Page Text</button>
+      </section>
+
+      <section class="toolbar screenshot-toolbar" aria-label="Screenshot actions">
+        <button id="capture-screenshot" type="button">Capture Screenshot</button>
+        <button id="upload-image" type="button">Upload Image</button>
+        <button id="remove-image" type="button">Remove Image</button>
+        <input id="image-file" class="hidden" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+      </section>
+
+      <section id="image-panel" class="image-panel hidden" aria-label="Selected screenshot">
+        <img id="screenshot-preview" alt="Selected screenshot preview">
+        <p id="image-status">No screenshot selected.</p>
+      </section>
+
+      <label class="field">
+        Source text
+        <textarea id="lab-text" spellcheck="false" placeholder="Select results in the EMR, then choose Use Selection or Add Selection. You can also paste text here."></textarea>
+      </label>
+
+      <label class="field">
+        Patient name
+        <input id="patient-name" type="text" autocomplete="off" placeholder="Insert_patient-name">
+      </label>
+
+      <section class="controls" aria-label="Draft options">
+        <label>
+          Template
+          <select id="template">
+            <option value="chart_labs_assessment_plan">Chart note: labs/assessment/plan</option>
+            <option value="patient_assessment_plan">Patient message: assessment/plan</option>
+            <option value="quick_normal">Quick normal results</option>
+            <option value="abnormal_followup">Abnormal results follow-up</option>
+          </select>
+        </label>
+        <label>
+          Tone
+          <select id="tone">
+            <option value="concise">Concise</option>
+            <option value="warm">Warm</option>
+            <option value="formal">Formal</option>
+          </select>
+        </label>
+      </section>
+
+      <button id="generate" class="primary" type="button">Generate Draft Note</button>
+
+      <section id="alert" class="alert hidden" role="status" aria-live="polite"></section>
+
+      <label class="field">
+        Draft note
+        <textarea id="draft-note" spellcheck="true" placeholder="AI-generated documentation draft will appear here for clinician review."></textarea>
+      </label>
+
+      <div class="footer-actions">
+        <button id="copy-note" type="button">Copy Note</button>
+        <button id="clear" type="button">Clear</button>
+      </div>
+    </main>
+    <script src="src/popup.js"></script>
+  </body>
+</html>

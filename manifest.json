@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Lab Note Draft Assistant",
+  "description": "Extracts lab text from an EMR page and drafts a clinician-reviewed documentation note.",
+  "version": "0.1.2",
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://api.openai.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Draft lab note"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
