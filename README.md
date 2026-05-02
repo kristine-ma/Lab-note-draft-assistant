@@ -1,6 +1,28 @@
 # Lab Note Draft Assistant
 
-A Chrome/Edge Manifest V3 extension that extracts lab-result text from an EMR page and uses AI to draft documentation text for clinician review.
+A Chrome/Edge extension that extracts clinical result text or screenshots from an EMR and drafts clinician-reviewable documentation with AI.
+
+<p align="center">
+  <a href="docs/media/demo-selection-workflow.mov">
+    <img src="docs/screenshots/selection-workflow.png" alt="Demo screenshot showing selected EMR result text flowing into a draft note" width="46%">
+  </a>
+  <a href="docs/media/demo-screenshot-workflow.mov">
+    <img src="docs/screenshots/screenshot-workflow.png" alt="Demo screenshot showing screenshot-based result analysis" width="46%">
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/media/demo-selection-workflow.mov">Watch selection workflow</a>
+  ·
+  <a href="docs/media/demo-screenshot-workflow.mov">Watch screenshot workflow</a>
+</p>
+
+## Highlights
+
+- Select multiple pieces of chart context, including PMH, meds, labs, and imaging.
+- Capture or upload screenshots for image-based result analysis.
+- Generate structured chart notes with `Labs reviewed` and `Imp and plan`.
+- Keep drafts clinician-reviewable and easy to edit before charting.
 
 ## What it does
 
@@ -13,11 +35,6 @@ A Chrome/Edge Manifest V3 extension that extracts lab-result text from an EMR pa
   - an approved server-side proxy URL.
 - Produces a draft note and review flags.
 - Copies the final draft to the clipboard after clinician review.
-
-## Demos
-
-- [Selection workflow demo](docs/media/demo-selection-workflow.mov)
-- [Screenshot workflow demo](docs/media/demo-screenshot-workflow.mov)
 
 The included demos should use fake or de-identified data only. Do not publish recordings that show real patient information.
 
