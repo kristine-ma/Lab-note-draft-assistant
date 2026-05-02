@@ -14,6 +14,13 @@ A Chrome/Edge Manifest V3 extension that extracts lab-result text from an EMR pa
 - Produces a draft note and review flags.
 - Copies the final draft to the clipboard after clinician review.
 
+## Demos
+
+- [Selection workflow demo](docs/media/demo-selection-workflow.mov)
+- [Screenshot workflow demo](docs/media/demo-screenshot-workflow.mov)
+
+The included demos should use fake or de-identified data only. Do not publish recordings that show real patient information.
+
 ## Privacy and clinical safety
 
 Lab data is protected health information. Do not send PHI to any AI service unless your organization has approved that workflow, including security review, access controls, auditability, retention rules, and any required BAA/vendor agreement.
